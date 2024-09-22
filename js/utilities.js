@@ -10,3 +10,13 @@ function getTextValueById(id){
     return textValueNumber;
 
 }
+
+function showSectionById(id){
+    // hide all the sections
+    document.getElementById('addmoney-section').classList.add('hidden');
+    document.getElementById('cashout-section').classList.add('hidden');
+    document.getElementById('trans-section').classList.add('hidden');
+
+    // show the section with the provided id as perameter
+    document.getElementById(id).classList.remove('hidden');
+}

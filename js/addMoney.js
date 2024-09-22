@@ -7,6 +7,11 @@ document.getElementById('addmoney-btn').addEventListener('click', function(event
     const addMoneyNumber = getInputValueById('add-money');
     const pinNumber = getInputValueById('pin-number');
 
+    if(isNaN(addMoneyNumber)){
+        alert('Faild to add money.')
+        return;
+    }
+
     if(pinNumber === 1234){
         const accountBalance = getTextValueById('account-balance');
         // const addMoneyNumber = parseFloat(addMoney);
@@ -14,6 +19,11 @@ document.getElementById('addmoney-btn').addEventListener('click', function(event
         const newBalance = accountBalance + addMoneyNumber;
         document.getElementById('account-balance').innerText = newBalance;
 
+        // add to transaction history
+        const log = document.createElement('p');
+        log.innerText = `Added: ${addMoneyNumber}TK. New Balance: ${newBalance}Tk.`;
+
+        document.getElementById('trans-container').appendChild(log);
         
     }
     else{
