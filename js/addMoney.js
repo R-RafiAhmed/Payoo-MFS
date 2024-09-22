@@ -1,16 +1,17 @@
 document.getElementById('addmoney-btn').addEventListener('click', function(event){
     event.preventDefault();
 
-    const addMoney = document.getElementById('add-money').value;
-    const pinNumber = document.getElementById('pin-number').value;
+    // const addMoney = document.getElementById('add-money').value;
+    // const pinNumber = document.getElementById('pin-number').value;
 
-    if(pinNumber === '1234'){
-        const accountBalance = document.getElementById('account-balance').innerText;
+    const addMoneyNumber = getInputValueById('add-money');
+    const pinNumber = getInputValueById('pin-number');
 
-        const balanceNumber = parseFloat(accountBalance);
-        const addMoneyNumber = parseFloat(addMoney);
+    if(pinNumber === 1234){
+        const accountBalance = getTextValueById('account-balance');
+        // const addMoneyNumber = parseFloat(addMoney);
 
-        const newBalance = balanceNumber + addMoneyNumber;
+        const newBalance = accountBalance + addMoneyNumber;
         document.getElementById('account-balance').innerText = newBalance;
 
         
